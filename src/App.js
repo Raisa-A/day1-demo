@@ -1,20 +1,34 @@
 import logo from "./logo.svg";
 import { useState } from "react";
 import "./App.css";
-
+import Button from "./components/Button";
+import Cart from "./components/Cart";
 
 function App() {
   const [count, setCount] = useState(0);
   
+  function searchHelper(i) {
+    console.log(i)
+  }
+
+  
   return (
     <>
-      <div className="App-header">
-        <h1> Hello, my name is Raisa Ahmed</h1>
+      <div className="topnav">
+        <a className="active" href="#home">
+          Home
+        </a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <input type="text" placeholder="Search.." onChange={searchHelper} value={searchHelper} />
       </div>
-      <div>
-      <p>You clicked {count} times</p>
-      <button onClick={() => setCount(count + 1)}>add 1 </button>
-    </div>
+      <div className="App-header">
+        <marquee>Welcome to my site!</marquee>
+        <h1> Raisa Ahmed</h1>
+        <Button />
+        <Cart />
+      </div>
+    
     </>
   );
 }
